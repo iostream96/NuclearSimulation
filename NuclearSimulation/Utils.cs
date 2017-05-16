@@ -18,7 +18,7 @@ namespace NuclearSimulation
             {
                 Point p = new Point();
 
-                p.X = constant.xLeft + i * 3;
+                p.X = constant.xLeft + i * constant.deltaPoint;
                 p.Y = constant.yDown - ran.Next(constant.backgroundMax);
                 result.Add(p);
             }
@@ -29,7 +29,7 @@ namespace NuclearSimulation
                 int climHeight;
 
                 climStart = ran.Next(constant.xLeft, constant.xRight - constant.climWidth);
-                climHeight=ran.Next()
+                climHeight = constant.climHeightRange[ran.Next(3)];
             }
 
             return result;
