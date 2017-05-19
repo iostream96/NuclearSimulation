@@ -9,6 +9,7 @@ namespace NuclearSimulation
 {
     class Utils
     {
+        //calpoint
         public static List<Point> getPoint(int n, bool triggerFlag)
         {
             Random ran = new Random();
