@@ -21,5 +21,8 @@ namespace NuclearSimulation
         public static readonly int[] climHeightRange = new int[3] { 100, 170, 250 };
         public const int climHeightCount = 3;
         public const int delayTime = 500;
+        public const int channelWidth = 2;
+        public const int countHeight = 5;
+        public const int channelCount = 375;
     }
 }
