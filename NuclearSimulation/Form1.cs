@@ -27,5 +27,11 @@ namespace NuclearSimulation
             SingleDetect form = new SingleDetect();
             form.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SpectraSimulation form = new SpectraSimulation();
+            form.ShowDialog();
+        }
     }
 }

@@ -62,6 +62,12 @@
     <Compile Include="SingleDetect.Designer.cs">
       <DependentUpon>SingleDetect.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpectraSimulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpectraSimulation.Designer.cs">
+      <DependentUpon>SpectraSimulation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="SingleDetect.resx">
       <DependentUpon>SingleDetect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpectraSimulation.resx">
+      <DependentUpon>SpectraSimulation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -26,6 +26,7 @@ namespace NuclearSimulation
         {
             InitializeComponent();
             gph = this.CreateGraphics();
+            comboBox1.Text = "1";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,17 +36,27 @@ namespace NuclearSimulation
                 startFlag = true;
                 drawOSC();
             }
+            else
+            {
+                startFlag = false;
+            }
         }
 
         private void drawOSC()
         {
-            while(true)
+            bool overTriggerFlag = false;
+
+            while(overTriggerFlag == false)
             {
+                int speedRatio;
+
                 gph.Clear(Color.White);
                 drawTicks(gph);
                 drawTrigger(gph, triggerY);
-                drawWave(gph, Utils.isTrigger());
-                Delay(500);
+                overTriggerFlag = drawWave(gph, Utils.isTrigger());
+
+                int.TryParse(comboBox1.Text, out speedRatio);
+                Delay(constant.delayTime/speedRatio);
             }
         }
 
@@ -74,8 +85,10 @@ namespace NuclearSimulation
             return;
         }
 
-        private void drawWave(Graphics gph, bool triggerFlag)
+        private bool drawWave(Graphics gph, bool triggerFlag)
         {
+            bool overTriggerFlag = false;
+            int climMax = y2;
             Pen p = new Pen(Color.Blue, 2);
 
             List<Point> toDraw = new List<Point>();
@@ -88,8 +101,18 @@ namespace NuclearSimulation
             {
                 gph.DrawLine(p, prev, o);
                 prev = o;
-            } 
+                if (o.Y<climMax)
+                {
+                    climMax = o.Y;
+                }
+            }
 
+            if (climMax<triggerY)
+            {
+                overTriggerFlag = true;
+            }
+
+            return overTriggerFlag;
         }
 
         private void SingleDetect_MouseDoubleClick(object sender, MouseEventArgs e)

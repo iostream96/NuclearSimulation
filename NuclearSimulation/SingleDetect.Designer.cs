@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -47,12 +48,12 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "1x",
-            "5x",
-            "10x"});
-            this.comboBox1.Location = new System.Drawing.Point(547, 479);
+            "1",
+            "5",
+            "10"});
+            this.comboBox1.Location = new System.Drawing.Point(531, 479);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 20);
+            this.comboBox1.Size = new System.Drawing.Size(46, 20);
             this.comboBox1.TabIndex = 1;
             // 
             // label1
@@ -64,11 +65,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "速率调整";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(583, 482);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "x";
+            // 
             // SingleDetect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 547);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
@@ -85,5 +96,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

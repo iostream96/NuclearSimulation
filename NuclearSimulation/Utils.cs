@@ -27,9 +27,20 @@ namespace NuclearSimulation
             {
                 int climStart;
                 int climHeight;
+                int heightRatio;
 
-                climStart = ran.Next(constant.xLeft, constant.xRight - constant.climWidth);
-                climHeight = constant.climHeightRange[ran.Next(3)];
+                climStart = ran.Next(result.Count() - constant.climWidth);
+                climHeight = constant.climHeightRange[ran.Next(constant.climHeightCount)];
+                heightRatio = climHeight / constant.shapeMax;
+
+                for (int i=0; i<constant.climWidth; i++)
+                {
+                    Point climPoint = new Point();
+
+                    climPoint = result[i + climStart];
+                    climPoint.Y = constant.yDown - constant.climShape[i] * heightRatio;
+                    result[i + climStart] = climPoint;
+                }
             }
 
             return result;
@@ -39,8 +50,10 @@ namespace NuclearSimulation
         {
             Random ran = new Random();
             bool triggerFlag = false;
+            double ranChance;
 
-            if(ran.Next(1000)/1000<constant.singleChance)
+            ranChance = (double)ran.Next(1000) / 1000.0;
+            if(ranChance<constant.singleChance)
             {
                 triggerFlag = true;
             }
