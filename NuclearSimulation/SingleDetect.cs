@@ -46,7 +46,7 @@ namespace NuclearSimulation
         {
             bool overTriggerFlag = false;
 
-            while((overTriggerFlag == false)&&(startFlag == true))
+            while(overTriggerFlag == false)
             {
                 int speedRatio;
 
