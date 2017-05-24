@@ -110,6 +110,7 @@ namespace NuclearSimulation
             if (climMax<triggerY)
             {
                 overTriggerFlag = true;
+                startFlag = false;
             }
 
             return overTriggerFlag;

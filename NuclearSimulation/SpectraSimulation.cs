@@ -49,7 +49,7 @@ namespace NuclearSimulation
             Pen p = new Pen(Color.Blue, 1);
 
             drawTicks();
-            spectraData = Utils.getSpectraData((x2x1)/channelWidth, nuclideType);
+            spectraData = Utils.getSpectraData((x2 - x1) / channelWidth, nuclideType);
             
             for(int i = 0; i<constant.climHeightCount; i++)
             {
