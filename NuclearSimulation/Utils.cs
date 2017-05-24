@@ -61,7 +61,12 @@ namespace NuclearSimulation
             return triggerFlag;
         }
 
+        public static List<int> getSpectraData(int n, string nuclideType)
+        {
+            List<int> result = new List<int>();
+  
+            return result;
+        }
 
-
-    }
+}
 }
